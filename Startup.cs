@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using PeopleApi.Models;
+using PeopleApi.Services;
 
 namespace PeopleApi
 {
@@ -29,6 +30,8 @@ namespace PeopleApi
         {
             services.Configure<PeopleDatabaseSettings>(Configuration.GetSection(nameof(PeopleDatabaseSettings)));
             services.AddSingleton<IPeopleDatabaseSettings>(sp => sp.GetRequiredService<IOptions<PeopleDatabaseSettings>>().Value);
+            services.AddSingleton<PeopleService>();
+
             services.AddControllers();
         }
 
