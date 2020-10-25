@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using PeopleApi.Models;
 
 namespace PeopleApi
 {
@@ -25,6 +27,8 @@ namespace PeopleApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<PeopleDatabaseSettings>(Configuration.GetSection(nameof(PeopleDatabaseSettings)));
+            services.AddSingleton<IPeopleDatabaseSettings>(sp => sp.GetRequiredService<IOptions<PeopleDatabaseSettings>>().Value);
             services.AddControllers();
         }
 
