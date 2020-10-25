@@ -19,7 +19,7 @@ namespace PeopleApi.Controllers
         [HttpGet]
         public ActionResult<List<People>> Get() => _peopleService.Get();
 
-        [HttpGet("{id: length(24)}", Name = "GetPeople")]
+        [HttpGet("{id:length(24)}", Name = "GetPeople")]
         public ActionResult<People> Get(string id)
         {
             var person = _peopleService.Get(id);
@@ -35,7 +35,7 @@ namespace PeopleApi.Controllers
             return CreatedAtRoute("GetPeople", new { id = p.Id.ToString() }, p);
         }
 
-        [HttpPut("{id: length(24)}")]
+        [HttpPut("{id:length(24)}")]
         public IActionResult Update(string id, People p)
         {
             var person = _peopleService.Get(id);
@@ -45,7 +45,7 @@ namespace PeopleApi.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id: length(24)}")]
+        [HttpDelete("{id:length(24)}")]
         public IActionResult Delete(string id)
         {
             var p = _peopleService.Get(id);

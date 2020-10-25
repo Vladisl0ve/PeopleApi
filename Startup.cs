@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
 using PeopleApi.Models;
 using PeopleApi.Services;
 
@@ -32,7 +33,7 @@ namespace PeopleApi
             services.AddSingleton<IPeopleDatabaseSettings>(sp => sp.GetRequiredService<IOptions<PeopleDatabaseSettings>>().Value);
             services.AddSingleton<PeopleService>();
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options => options.UseMemberCasing());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
