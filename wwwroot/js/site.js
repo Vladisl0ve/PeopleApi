@@ -116,14 +116,22 @@ function _displayItems(data) {
         td1.appendChild(isCompleteCheckbox);
 
         let td2 = tr.insertCell(1);
-        let textNode = document.createTextNode(item.name);
-        td2.appendChild(textNode);
+        let textNodeName = document.createTextNode(item.Name);
+        td2.appendChild(textNodeName);
 
         let td3 = tr.insertCell(2);
-        td3.appendChild(editButton);
+        let textNodeSurname = document.createTextNode(item.Surname);
+        td3.appendChild(textNodeSurname);
 
         let td4 = tr.insertCell(3);
-        td4.appendChild(deleteButton);
+        let textNodeAge = document.createTextNode(item.Age);
+        td4.appendChild(textNodeAge);
+
+        let td5 = tr.insertCell(4);
+        td5.appendChild(editButton);
+
+        let td6 = tr.insertCell(5);
+        td6.appendChild(deleteButton);
     });
 
     todos = data;
