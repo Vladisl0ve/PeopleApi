@@ -23,6 +23,7 @@ namespace PeopleApi
         {
             Configuration = configuration;
         }
+        //"ConnectionString": "mongodb://localhost:27017",
 
         public IConfiguration Configuration { get; }
 

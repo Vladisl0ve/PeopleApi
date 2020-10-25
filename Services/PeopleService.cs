@@ -16,6 +16,7 @@ namespace PeopleApi.Services
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
 
+
             _people = database.GetCollection<People>(settings.PeopleCollectionName);
         }
 
