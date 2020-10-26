@@ -30,9 +30,9 @@ function addItem() {
         .then(response => response.json())
         .then(() => {
             getItems();
-            addNameTextbox.value = '21';
-            addSurnameTextbox.value = '22';
-            addAgeTextbox.value = 0;
+            addNameTextbox.value = '';
+            addSurnameTextbox.value = '';
+            addAgeTextbox.value = '';
         })
         .catch(error => console.error('Unable to add item.', error));
 }
