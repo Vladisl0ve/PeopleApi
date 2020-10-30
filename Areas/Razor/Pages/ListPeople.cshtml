@@ -1,10 +1,16 @@
 ﻿@page
 @model PeopleApi.Areas.Razor.Pages.ListPeopleModel
 @{
-    ViewData["Title"] = "ListBooks";
+    ViewData["Title"] = "ListPeople";
 }
 
 <h1>List People</h1>
+<div class="container">
+    <p>
+        <a asp-page="CreatePerson">Create New</a>
+    </p>
+</div>
+
 
 <table class="table-sm table-responsive-sm table-bordered">
     <thead>
@@ -33,6 +39,11 @@
                 </td>
                 <td>
                     @Html.DisplayFor(mi => item.Age)
+                </td>
+                <td>
+                    <a asp-page="./EditPerson" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./DetailPerson" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./DeletePerson" asp-route-id="@item.Id">Delete</a>
                 </td>
             </tr>
         }
