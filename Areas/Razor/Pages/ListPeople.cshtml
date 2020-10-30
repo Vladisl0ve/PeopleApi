@@ -1,0 +1,40 @@
+﻿@page
+@model PeopleApi.Areas.Razor.Pages.ListPeopleModel
+@{
+    ViewData["Title"] = "ListBooks";
+}
+
+<h1>List People</h1>
+
+<table class="table-sm table-responsive-sm table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(m => m.PeopleList[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.PeopleList[0].Surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.PeopleList[0].Age)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.PeopleList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(mi => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(mi => item.Surname)
+                </td>
+                <td>
+                    @Html.DisplayFor(mi => item.Age)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
