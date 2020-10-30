@@ -23,8 +23,7 @@ namespace PeopleApi
         {
             Configuration = configuration;
         }
-        //"ConnectionString": "mongodb://localhost:27017",
-        //notchik Birthday
+        //"ConnectionString": "mongodb://localhost:27017"
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -35,6 +34,8 @@ namespace PeopleApi
             services.AddSingleton<PeopleService>();
 
             services.AddControllers().AddNewtonsoftJson(options => options.UseMemberCasing());
+
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +58,7 @@ namespace PeopleApi
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapRazorPages();
             });
         }
     }

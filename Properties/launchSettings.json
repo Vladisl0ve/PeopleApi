@@ -20,7 +20,17 @@
     "PeopleApi": {
       "commandName": "Project",
       "launchBrowser": true,
-     // "launchUrl": "api/people",
+      // "launchUrl": "api/people",
+      "applicationUrl": "https://localhost:5001;http://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+
+    "RazorTest": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "Razor/Index",
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
